@@ -1,6 +1,8 @@
 from flask import Flask, request, jsonify
 import util
+from flask_cors import CORS
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/get_location_names')
 def get_location_names():
@@ -30,4 +32,4 @@ def predict_home_price():
 
 if __name__ == "__main__":
     print("Starting Python Flask Server For Real Estate Price Prediction")
-    app.run()
+    app.run(debug=True, port=5000)
